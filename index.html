@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="home-section">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Welcome to My Portfolio</h1>
+                <p>Explore my work and projects</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-me">
+        <div class="container">
+            <div class="content">
+                <h2>About Me</h2>
+                <p class="short-description">
+                    Hi there! 👋 I'm Pranjal, a passionate learner and programmer with a love for technology and innovation. Currently, I'm pursuing my Bachelor's degree in Information Technology (IT) at Dharmsinh Desai University, where I'm diving deep into the fascinating world of computer science.
+                </p>
+                <button id="show-more-btn">Know More</button>
+                <p class="full-description hidden">
+                    From a young age, I've been captivated by the endless possibilities that technology brings. Whether it's coding up a new project or exploring the latest advancements in the tech industry, I thrive on the excitement of learning and experimenting with new ideas.
+                    As a smart learner, I believe in the power of continuous growth and education. Every challenge I face is an opportunity to expand my knowledge and improve my skills. Whether it's mastering a new programming language or delving into complex algorithms, I'm always eager to push myself further and broaden my understanding of the digital landscape.
+                    Throughout my academic journey, I've had the privilege of working on a variety of exciting projects. From developing web applications to creating innovative software solutions, each project has been a chance to apply my skills in real-world scenarios and make a meaningful impact.
+                    Outside of coding, you'll often find me exploring the latest tech trends, attending hackathons, or collaborating with fellow enthusiasts on passion projects. I'm a firm believer in the power of collaboration and community, and I'm always looking for opportunities to connect with like-minded individuals who share my passion for technology.
+                    In essence, I'm a curious and driven individual who's passionate about leveraging technology to solve problems and make a positive difference in the world. I'm excited to see where this journey takes me next, and I can't wait to continue learning, growing, and pushing the boundaries of what's possible in the world of IT and beyond.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="project-grid">
+                <div class="project">
+                    <img src="logo_egov.png" alt="egov" height="50px" width="50px">
+                    <h3>Project 1</h3>
+                    <p>Description of Project 1</p>
+                </div>
+                <!-- Add more projects here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Portfolio</p>
+        </div>
+    </footer>
+
+</body>
+<script>
+        $(document).ready(function() {
+            $("#show-more-btn").click(function() {
+                var shortDescription = $(".short-description");
+                var fullDescription = $(".full-description");
+                if (shortDescription.hasClass("hidden")) {
+                    shortDescription.removeClass("hidden");
+                    fullDescription.addClass("hidden");
+                    $(this).text("Know More");
+                } else {
+                    shortDescription.addClass("hidden");
+                    fullDescription.removeClass("hidden");
+                    $(this).text("View Less");
+                }
+            });
+        });
+</script>
+</html>
+
+
+
+

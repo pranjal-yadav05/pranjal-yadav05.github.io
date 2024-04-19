@@ -1,0 +1,165 @@
+/* Reset CSS */
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+25&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 600;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.hero {
+    background-image: url('giphy.gif');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+#home{
+    padding:0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.project {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    max-width: 100%; /* Ensure project divs stay within grid */
+    /* height: 300px; Set a fixed height */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+}
+
+.project h3,
+.project p {
+    margin-top: 10px; /* Add spacing between image and text */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .hero {
+        min-height: 50vh;
+    }
+
+    .project {
+        height: auto; /* Change height to auto for smaller screens */
+    }
+}
+
+/* Add styles for hiding full description */
+.hidden {
+    display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* Add more font size adjustments as needed */
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animated {
+    animation-fill-mode: both;
+    animation-duration: 1s;
+}
+
+.fadeIn {
+    animation-name: slideInFromLeft;
+}
+
+.content{
+    padding:10px;
+}
+
+button{
+    margin:5px;
+    background-color: #333;
+    padding: 5px;
+    color:white;
+}

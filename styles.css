@@ -16,6 +16,10 @@ body {
 header {
     background-color: #ff7885;
     padding: 20px 0;
+    color: black;
+}
+header a:hover{
+    color:#E8FFAA;
 }
 
 nav ul {
@@ -165,16 +169,20 @@ footer .container{
 }
 
 .content{
-    padding:10px;
+    padding:20px;
+    background-color: #ff7885;
+    border-radius: 10px;
 }
 
 button{
-    margin:5px;
-    background-color: #333;
+    margin:15px 0; 
+    background-color:#62436D;
     padding: 5px;
     color:white;
 }
+
 .contact-section {
+    text-align: center;
     padding: 50px 0;
     background-color: #3b3251;
 
@@ -201,4 +209,76 @@ button{
     h1{
         font-size: 35px;
     }
+    header{
+        font-size: 18px;
+    }
+    section{
+        font-size: 17px;
+    }
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+#portfolio{
+    padding-top:0;
+}
+.contact-section {
+    text-align: center;
+    padding: 50px 0;
+    position: relative;
+}
+
+.contact-section h2 {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.contact-section h2::before,
+.contact-section h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 20%; /* Adjust line width as needed */
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 10;
+}
+
+.contact-section h2::before {
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.contact-section h2::after {
+    right: 0;
+    transform: translateY(-50%);
+}
+
+#contact h2{
+    width: 100%;
+}
+
+/* Add this CSS to your existing stylesheet */
+
+.hero-content h1,
+.hero-content p {
+    transition: all 0.3s ease; /* Add transition for smooth effect */
+}
+
+.hero-content:hover h1,
+.hero-content:hover p {
+    color: pink; /* Change font color to pink on hover */
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+#profpic {
+    transition: all 0.3s ease; /* Add transition for smooth effect */
+}
+
+#profpic:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
 }

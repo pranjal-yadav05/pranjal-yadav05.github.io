@@ -14,8 +14,8 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#portfolio">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -31,7 +31,7 @@
         </div>
     </section>
 
-    <section class="about-me">
+    <section id="about-me" class="about-me">
         <div class="container">
             <div class="content">
                 <h2>About Me</h2>
@@ -39,10 +39,10 @@
                     Hi there! 👋 I'm Pranjal, a passionate learner and programmer with a love for technology and innovation. Currently, I'm pursuing my Bachelor's degree in Information Technology (IT) at Dharmsinh Desai University, where I'm diving deep into the fascinating world of computer science.
                 </p>
                 <button id="show-more-btn">Know More</button>
-                <p class="full-description hidden">
+                <p style="color: black;" class="full-description hidden">
                     From a young age, I've been captivated by the endless possibilities that technology brings. Whether it's coding up a new project or exploring the latest advancements in the tech industry, I thrive on the excitement of learning and experimenting with new ideas.
-                    As a smart learner, I believe in the power of continuous growth and education. Every challenge I face is an opportunity to expand my knowledge and improve my skills. Whether it's mastering a new programming language or delving into complex algorithms, I'm always eager to push myself further and broaden my understanding of the digital landscape.
-                    Throughout my academic journey, I've had the privilege of working on a variety of exciting projects. From developing web applications to creating innovative software solutions, each project has been a chance to apply my skills in real-world scenarios and make a meaningful impact.
+                    As a smart learner, I believe in the power of continuous growth and education. <br> Every challenge I face is an opportunity to expand my knowledge and improve my skills. Whether it's mastering a new programming language or delving into complex algorithms, I'm always eager to push myself further and broaden my understanding of the digital landscape.
+                    <br> Throughout my academic journey, I've had the privilege of working on a variety of exciting projects.  From developing web applications to creating innovative software solutions, each project has been a chance to apply my skills in real-world scenarios and make a meaningful impact.
                     Outside of coding, you'll often find me exploring the latest tech trends, attending hackathons, or collaborating with fellow enthusiasts on passion projects. I'm a firm believer in the power of collaboration and community, and I'm always looking for opportunities to connect with like-minded individuals who share my passion for technology.
                     In essence, I'm a curious and driven individual who's passionate about leveraging technology to solve problems and make a positive difference in the world. I'm excited to see where this journey takes me next, and I can't wait to continue learning, growing, and pushing the boundaries of what's possible in the world of IT and beyond.
                 </p>
@@ -53,19 +53,38 @@
 
     <section id="portfolio" class="portfolio-section">
         <div class="container">
-            <h2>Portfolio</h2>
+            <h2>Projects</h2>
+            
             <div class="project-grid">
                 <div class="project">
-                    <img src="logo_egov.png" alt="egov" height="50px" width="50px">
-                    <h3>Project 1</h3>
-                    <p>Description of Project 1</p>
+                    <img src="voltbot.gif" alt="egov" height="50px" width="50px">
+                    <h3 style="color: black;">VoltBot</h3>
+                    <p>VoltBot is an AI-powered assistant designed to help you with all your electrical engineering queries and tasks. Whether you're a professional electrician or a hobbyist, VoltBot is here to assist you with information, troubleshooting, and more!
+                    <br> <br>   <br> Repo : <a href="https://github.com/pranjal-yadav05/VoltBot">Voltbot</a>
+                    </p>
                 </div>
+                <div class="project">
+                    <img src="logo_egov.png" alt="egov" height="50px" width="50px">
+                    <h3 style="color: black;">EGOV</h3>
+                    <p>A solution designed to help students access their university's eGov portal with ease. 
+                       <br> This app not only simplifies access but also provides additional features like saving and managing profiles for quick reference.
+                     <br> <br>  <br> Repo : <a href="https://github.com/pranjal-yadav05/EGOV">EGOV</a>
+                    </p>
+                </div>
+                <div class="project">
+                    <img src="user.png" alt="egov" height="50px" width="50px">
+                    <h3 style="color: black;">NETIZENS</h3>
+                    <p>Netizens is a PHP and AJAX-based web application that allows users to chat online with friends in real-time. Users can create friendships by sending and accepting friend requests, customize their profiles with images and usernames, and engage in quick and seamless conversations
+                        <br> Repo : <a href="https://github.com/pranjal-yadav05/NETIZENS">NETIZENS</a>
+                    </p>
+                </div>
+                
                 <!-- Add more projects here -->
             </div>
         </div>
     </section>
 
-    <section class="contact-section">
+    <section id="contact" class="contact-section">
         <div class="container">
             <h2>Contact Me</h2>
             <ul class="social-icons">
@@ -87,6 +106,18 @@
 </body>
 <script>
         $(document).ready(function() {
+
+            // Smooth scrolling for links
+              $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+
             $("#show-more-btn").click(function() {
                 var shortDescription = $(".short-description");
                 var fullDescription = $(".full-description");

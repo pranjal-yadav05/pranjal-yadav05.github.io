@@ -127,6 +127,11 @@ footer .container{
         font-size: 24px;
     }
 
+    #profpic{
+        width: 150px;
+        height: 150px;
+    }
+
     h2 {
         font-size: 20px;
     }
@@ -168,3 +173,25 @@ button{
     padding: 5px;
     color:white;
 }
+.contact-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.social-icons {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin: 5px;
+    margin-left: 1px;
+    margin-right: 10px;
+}
+
+.social-icons li a {
+    color: #333;
+    font-size: 24px;
+}
+

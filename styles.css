@@ -1,5 +1,7 @@
 /* Reset CSS */
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lobster&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -48,12 +50,14 @@ nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .hero-content {
     margin-top: -50px;
     text-align: center;
     color: #fff;
+    animation: introAnimation 1.5s ease forwards; 
 }
 
 .container {
@@ -281,4 +285,202 @@ h2{
 
 #profpic:hover {
     transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.pranjalyadav{
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    margin: 0 20px;
+}
+
+nav ul{
+    margin: 0 20px;
+}
+/* Media query for screens less than 430px */
+@media (max-width: 430px) {
+    .nav-list {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+    .ham{
+        display: block;
+    }
+    header{
+        padding: 1%;
+    }
+}
+
+@media (min-width:430px){
+    .hamburger-menu{
+        display: none;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially set to the right side */
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1000; /* Ensure it's above other content */
+    display: none; /* Initially hidden */
+    transition: right 0.5s ease; /* Add transition for smooth animation */
+}
+
+.overlay-content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    animation: slideInFromRight 0.5s ease forwards; /* Slide in from right animation */
+}
+
+@keyframes slideInFromRight {
+    0% {
+        right: -300px; /* Start from outside the viewport */
+    }
+    100% {
+        right: 0; /* Move to the left */
+    }
+}
+
+
+
+
+.close-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Media query for screens less than 430px */
+@media (max-width: 430px) {
+    .overlay-content {
+        width: 100%;
+    }
+}
+
+/* Add a keyframe animation for closing the overlay from right to left */
+@keyframes slideOutFromRight {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: -300px; /* Move overlay content to the left */
+    }
+}
+
+.overlay-content {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    animation-duration: 0.5s; /* Animation duration */
+    animation-fill-mode: both; /* Apply styles before and after animation */
+    animation-timing-function: ease-out; /* Animation timing function */
+}
+
+.close-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer; /* Add cursor pointer for better UX */
+}
+
+/* Apply the animation to the overlay content when closing */
+.overlay-content.closing {
+    animation-name: slideOutFromRight;
+}
+
+.overlay ul{
+    list-style: none;
+}
+
+/* Overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1000; /* Ensure it's above other content */
+    display: none; /* Initially hidden */
+}
+/* Overlay content styles */
+.overlay-content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px; /* Adjust width as needed */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    animation-duration: 0.5s; /* Animation duration */
+    animation-fill-mode: both; /* Apply styles before and after animation */
+    animation-timing-function: ease-out; /* Animation timing function */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Add shadow to the left for depth */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    padding: 20px; /* Add padding to the content */
+    z-index: 1001; /* Ensure the content is above the overlay */
+    color: #fff; /* Text color */
+}
+
+/* Close menu button styles */
+.close-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer; /* Add cursor pointer for better UX */
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 20px;
+    color: #fff; /* Button color */
+    transition: color 0.3s; /* Add transition for smooth effect */
+}
+
+.close-menu:hover {
+    color: #ff0000; /* Change color on hover */
+}
+
+/* List styles */
+.overlay-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.overlay-content ul li {
+    margin-bottom: 10px;
+}
+
+.overlay-content ul li a {
+    text-decoration: none;
+    color: #fff; /* Link color */
+    font-size: 18px; /* Font size for links */
+    transition: color 0.3s; /* Add transition for smooth effect */
+}
+
+.overlay-content ul li a:hover {
+    color: #ff0000; /* Change color on hover */
+}
+
+/* Keyframe animation for the intro */
+@keyframes introAnimation {
+    0% {
+        transform: scale(1.2); /* Start with a scale of 1.2 (big) */
+        opacity: 0; /* Initially hidden */
+    }
+    100% {
+        transform: scale(1); /* End with the original size */
+        opacity: 1; /* Fully visible */
+    }
 }

@@ -10,20 +10,43 @@
 
 </head>
 <body>
-    <header>
+    <header style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 class="pranjalyadav">Pranjal Yadav</h3>
         <nav>
-            <ul>
+            <ul class="nav-list">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about-me">About</a></li>
                 <li><a href="#portfolio">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="hamburger-menu" >
+                <!-- Your hamburger menu icon here -->
+                <img id="ham" src="ham.png" width="40px"/>
+            </div>
+            <div class="cancel-menu" style="display: none;">
+                <!-- Your cancel button icon here -->
+                
+            </div>
         </nav>
     </header>
+    <div id="overlay" class="overlay">
+        <div id="overlay_content" style="width: 70vw;" class="overlay-content">
+            <ul id="listing">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <img id="close" class="close-menu" src="close.png" width="40px"/>
+        </div>
+    </div>
+    
+    
 
     <section id="home" class="home-section">
         <div class="hero">
             <div class="hero-content">
+                
                 <img id="profpic" src="pic.jpg" style="border-radius: 250px; margin-bottom: 50px;" height="250px"/>
                 <h1>Welcome to My Portfolio</h1>
                 <p>Explore my work and projects</p>
@@ -105,33 +128,66 @@
 
 </body>
 <script>
-        $(document).ready(function() {
+ $(document).ready(function() {
 
-            // Smooth scrolling for links
-              $('a[href^="#"]').on('click', function(event) {
-                var target = $(this.getAttribute('href'));
-                if (target.length) {
-                    event.preventDefault();
-                    $('html, body').stop().animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                }
-            });
+    // Smooth scrolling for links
+    $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top
+            }, 1000);
+        }
+    });
 
-            $("#show-more-btn").click(function() {
-                var shortDescription = $(".short-description");
-                var fullDescription = $(".full-description");
-                if (shortDescription.hasClass("hidden")) {
-                    shortDescription.removeClass("hidden");
-                    fullDescription.addClass("hidden");
-                    $(this).text("Know More");
-                } else {
-                    shortDescription.addClass("hidden");
-                    fullDescription.removeClass("hidden");
-                    $(this).text("View Less");
-                }
-            });
-        });
+    $("#show-more-btn").click(function() {
+        var shortDescription = $(".short-description");
+        var fullDescription = $(".full-description");
+        if (shortDescription.hasClass("hidden")) {
+            shortDescription.removeClass("hidden");
+            fullDescription.addClass("hidden");
+            $(this).text("Know More");
+        } else {
+            shortDescription.addClass("hidden");
+            fullDescription.removeClass("hidden");
+            $(this).text("View Less");
+        }
+    });
+});
+
+var ham = document.getElementById('ham');
+var overlay = document.getElementById('overlay');
+var close = document.getElementById('close');
+var overcon = document.getElementById('overlay_content');
+var list = document.getElementById('listing')
+
+ham.addEventListener('click', function() {
+    overlay.style.display = 'block';
+    setTimeout(function() {
+        overcon.style.right = '0'; // Show overlay with animation
+    }, 100);
+});
+
+
+close.addEventListener('click', function() {
+    overcon.classList.add('closing'); // Add closing animation class
+    setTimeout(function() {
+        overlay.style.display = 'none';
+        overcon.classList.remove('closing'); // Remove closing animation class after animation completes
+    }, 500); // Wait for the animation to complete
+});
+
+list.addEventListener('click', function(){
+    overcon.classList.add('closing'); // Add closing animation class
+    setTimeout(function() {
+        overlay.style.display = 'none';
+        overcon.classList.remove('closing'); // Remove closing animation class after animation completes
+    }, 500);
+})
+
+
+
 </script>
 </html>
 

@@ -1,5 +1,5 @@
 /* Reset CSS */
-@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+25&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lobster&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: "Jersey 25", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-weight: 600;
     background-color: #f7f7f7;
     color: #333;
@@ -37,6 +37,7 @@ nav ul li a {
 
 .hero {
     background-image: url('giphy.gif');
+    font-family: "Lobster", sans-serif;
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -97,7 +98,11 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 0;
+}
+
+footer .container{
+    padding:10px;
 }
 
 /* Responsive Styles */
